@@ -10,7 +10,7 @@ class City(models.Model):
     desc = models.CharField(max_length=200, verbose_name="描述")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "城市"
         verbose_name_plural = verbose_name
 
@@ -26,7 +26,7 @@ class CourseOrg(models.Model):
     address = models.CharField(max_length=150, null=True, verbose_name="机构地址")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "课程机构"
         verbose_name_plural = verbose_name
 
@@ -43,6 +43,6 @@ class Teacher(models.Model):
     image = models.ImageField(upload_to="teacher/%Y/%m", verbose_name="教师照片", max_length=100)
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "教师"
         verbose_name_plural = verbose_name

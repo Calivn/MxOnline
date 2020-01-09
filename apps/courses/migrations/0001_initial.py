@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='章节名')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.courses.Course', verbose_name='课程')),
+                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='courses.Course', verbose_name='课程')),
             ],
         ),
         migrations.CreateModel(
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, verbose_name='视频名')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('lesson', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.courses.Lesson', verbose_name='章节')),
+                ('lesson', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='courses.Lesson', verbose_name='章节')),
             ],
         ),
         migrations.CreateModel(
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100, verbose_name='资源名')),
                 ('download', models.FileField(upload_to='course/resource/%Y/%m', verbose_name='资源文件')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.courses.Course', verbose_name='课程')),
+                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='courses.Course', verbose_name='课程')),
             ],
         ),
     ]

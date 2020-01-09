@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(upload_to='org/%Y/%m', verbose_name='封面图')),
                 ('address', models.CharField(max_length=150, null=True, verbose_name='机构地址')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.organization.City', verbose_name='所在城市')),
+                ('city', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='organization.City', verbose_name='所在城市')),
             ],
         ),
         migrations.CreateModel(
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                 ('fav_nums', models.IntegerField(default=0, verbose_name='收藏人数')),
                 ('image', models.ImageField(upload_to='teacher/%Y/%m', verbose_name='教师照片')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('org', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.organization.CourseOrg', verbose_name='所属机构')),
+                ('org', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='organization.CourseOrg', verbose_name='所属机构')),
             ],
         ),
     ]

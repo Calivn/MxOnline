@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.courses.Course', verbose_name='课程')),
+                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='courses.Course', verbose_name='课程')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL, verbose_name='用户名')),
             ],
         ),
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comments', models.CharField(max_length=200, verbose_name='评论')),
                 ('add_time', models.DateTimeField(default=datetime.datetime.now, verbose_name='添加时间')),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='apps.courses.Course', verbose_name='课程')),
+                ('course', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='courses.Course', verbose_name='课程')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL, verbose_name='用户名')),
             ],
         ),

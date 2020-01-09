@@ -14,7 +14,7 @@ class UserAsk(models.Model):
     course_name = models.CharField(max_length=100, verbose_name="课程名称")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "用户咨询"
         verbose_name_plural = verbose_name
 
@@ -46,7 +46,7 @@ class UserCourse(models.Model):
     course = models.ForeignKey(Course, verbose_name="课程", on_delete=models.PROTECT)
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "用户课程"
         verbose_name_plural = verbose_name
 
@@ -59,7 +59,7 @@ class CourseComments(models.Model):
     comments = models.CharField(max_length=200, verbose_name="评论")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "课程评论"
         verbose_name_plural = verbose_name
 
@@ -72,7 +72,7 @@ class UserFavorite(models.Model):
     fav_type = models.IntegerField(choices=((1, "课程"), (2, "课程机构"), (3, "讲师")), default=1, verbose_name="收藏类型")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "用户收藏"
         verbose_name_plural = verbose_name
 
@@ -83,7 +83,7 @@ class UserMessage(models.Model):
     has_read = models.BooleanField(max_length=False, verbose_name="是否已读")
     add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-    class Mate:
+    class Meta:
         verbose_name = "用户消息"
         verbose_name_plural = verbose_name
 
