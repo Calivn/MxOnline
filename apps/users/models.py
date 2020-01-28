@@ -6,10 +6,13 @@ from django.contrib.auth.models import AbstractUser
 
 
 class UserProfile(AbstractUser):
-    """重写user表，用自己创建的UserProfile覆盖User表"""
+    """
+    重写user表，用自己创建的UserProfile覆盖User表
+
     # 备注用verbose_name，而不是validators
     # A validator is a callable that takes a value and raises a ValidationError if it doesn’t meet some criteria.
     # Validators can be useful for re-using validation logic between different types of fields.
+    """
     nick_name = models.CharField(max_length=50, verbose_name=u"昵称", default="zc")
     birthday = models.DateField(verbose_name=u"生日", null=True)
     gender = models.CharField(max_length=6, choices=(("male", u"男"), ("female", u"女")),

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示信息</title>
+</head>
+<body>
+{% if msg == "send_success" %}
+    <p>重置邮件已发送，请进入邮箱，通过重置链接重置密码。</p>
+    {% elif msg == "fail" %}
+    <p>链接已失效</p>
+{% endif %}
+</body>
+</html>
