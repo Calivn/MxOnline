@@ -17,14 +17,14 @@ class CityAdmin(object):
 
 
 class CourseOrgAdmin(object):
-    list_display = ['city', 'name', 'desc', 'click_nums', 'fav_nums', 'image', 'address', 'add_time']
-    search_fields = ['name', 'desc']
+    list_display = ['name', 'desc', 'click_nums', 'fav_nums', 'address', 'category']
+    search_fields = ['name', 'category']
     list_filter = ('city', 'add_time',)
 
 
 class TeacherAdmin(object):
-    list_display = ['org', 'name', 'work_years', 'work_company', 'work_position',
-                    'points', 'click_nums', 'fav_nums', 'image', 'add_time']
+    list_display = ['name', 'work_years', 'work_company','org', 'work_position',
+                    'points', 'click_nums', 'fav_nums',]
     search_fields = ['name', 'work_company', 'work_position', 'points']
     list_filter = ('org__name', 'work_years',)
 

@@ -14,11 +14,16 @@ class City(models.Model):
         verbose_name = "城市"
         verbose_name_plural = verbose_name
 
+    def __str__(self):
+        return self.name
+
 
 class CourseOrg(models.Model):
     # on_delete=models.PROTECT 阻止上面的删除操作，弹出ProtectedError异常
     city = models.ForeignKey(City, verbose_name="所在城市", on_delete=models.PROTECT)
     name = models.CharField(max_length=50, verbose_name="机构名称")
+    category = models.CharField(max_length=20, default="pxjg", choices=(("pxjg", "培训机构"), ("gr", "个人"), ("gx", "高校")),
+                                verbose_name="机构类别")
     desc = models.TextField(verbose_name="机构描述")
     click_nums = models.IntegerField(default=0, verbose_name="点击量")
     fav_nums = models.IntegerField(default=0, verbose_name="收藏人数")
@@ -29,6 +34,9 @@ class CourseOrg(models.Model):
     class Meta:
         verbose_name = "课程机构"
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
 
 
 class Teacher(models.Model):
@@ -46,3 +54,6 @@ class Teacher(models.Model):
     class Meta:
         verbose_name = "教师"
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name

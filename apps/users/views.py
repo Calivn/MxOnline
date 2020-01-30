@@ -12,7 +12,7 @@ from utils.email_send import send_register_email
 
 class CustomBackend(ModelBackend):
     """
-    本方法通过重写ModelBackend，对用户登陆验证加入email校验，使得登陆时既可以用username，也可以用Email
+    通过重写ModelBackend，对用户登陆验证加入email校验，使得登陆时既可以用username，也可以用Email
 
     Q 用来设置并集查询条件，| 表示或
     示例：

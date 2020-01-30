@@ -16,10 +16,13 @@ Including another URLconf
 # from django.contrib import admin
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
+from django.views.static import serve
 import xadmin
 
 # from users import views   # 用函数方式实现登陆时，需要导入的方法
 from users.views import LoginView, RegisterView, ActiveView, ResetView, ForgetView, ModifyPwdView
+from organization.views import OrgView
+from MxOnline import settings
 
 urlpatterns = [
     url('^xadmin/', xadmin.site.urls, name='xadmin'),
@@ -34,4 +37,8 @@ urlpatterns = [
     url(r'^forgetpwd/$', ForgetView.as_view(), name="forgetpwd"),       # 忘记密码
     url(r'^reset/(?P<reset_code>.*)/$', ResetView.as_view(), name="reset_pwd"),    # 打开修改密码页面
     url(r'^modify/$', ModifyPwdView.as_view(), name="modify_pwd"),      # 修改密码
+
+    url(r'^org_list/$', OrgView.as_view(), name="org_list"),       # 机构列表页面
+
+    url(r'^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT}),    # 文件上传后，通过该配置进行访问
 ]
